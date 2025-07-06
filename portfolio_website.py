@@ -20,14 +20,17 @@ st.set_page_config(page_title="Ayush's Portfolio", layout="wide")
 st.markdown("""
     <style>
         section[data-testid="stSidebar"] {
-           background: linear-gradient(to bottom right, #0f2027, #2c5364);
-            justify-content: center;  /* vertical center */
-            align-items: center; 
-            color: white;
-            padding: 30px 15px;
-            border-radius: 0 20px 20px 0;
-            box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+        background: linear-gradient(to bottom right, #0f2027, #2c5364);
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 30px 15px;
+        border-radius: 0 20px 20px 0;
+        box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+        min-width: 310px !important;
+        width: 310px !important;
         }
+
 
         .sidebar-title {
             font-size: 28px;
@@ -107,6 +110,13 @@ st.markdown("""
 
         
     }
+
+    .main .block-container {
+    max-width: 100% !important;
+    padding: 1rem 3rem 2rem 3rem; /* top, right, bottom, left */
+    margin-top: -20px; /* Moves it up slightly */
+    }
+
  
     h1, h2, h3, h4, h5, h6 {
         color: #111111;
