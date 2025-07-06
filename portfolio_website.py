@@ -137,8 +137,6 @@ st.markdown("""
     h3 {
         font-size: 22px !important;
     }
-    </style>
-""", unsafe_allow_html=True)
             
     
     .stTabs [role="tab"] {
