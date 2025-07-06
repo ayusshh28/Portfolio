@@ -172,7 +172,7 @@ if selection == "🏠 Home":
             }
 
             .home-heading {
-                font-size: 90px;
+                font-size: 60px;
                 font-weight: 900;
                 margin-bottom: 10px;
                 background: linear-gradient(to right, #FF914D, #FFDE59);
@@ -181,7 +181,7 @@ if selection == "🏠 Home":
             }
 
             .typing {
-                font-size: 24px;
+                font-size: 22px;
                 color: black;
                 margin-bottom: 20px;
                 border-right: 3px solid #FFDE59;
@@ -230,7 +230,7 @@ if selection == "🏠 Home":
             </div>
         """, unsafe_allow_html=True)
 
-        left, center, right = st.columns([0.2, 2, 1.8])
+        left, center, right = st.columns([0.3, 2, 1.7])
 
         # Put the button in the center column
         with center:
