@@ -192,7 +192,7 @@ if selection == "🏠 Home":
             }
 
             .home-heading {
-                font-size: 70px;
+                font-size: 90px;
                 font-weight: 900;
                 margin-bottom: 10px;
                 background: linear-gradient(to right, #FF914D, #FFDE59);
@@ -219,8 +219,9 @@ if selection == "🏠 Home":
          
 
             .home-description {
-                font-size: 19px;
-                font-weight: 500;
+                font-family: 'Poppins';
+                font-size: 20px;
+                font-weight: 300;
                 line-height: 1.6;
                 color: black;
             }
