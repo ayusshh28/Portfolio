@@ -705,7 +705,7 @@ elif selection == "💼 Projects":
             with col1:
                 with st.container():
                     st.markdown('<div class="rounded-img">', unsafe_allow_html=True)
-                    st.image("./images/IPL.png", caption="IPL Dashboard", use_column_width=True)
+                    st.image("./images/IPL.png", caption="IPL Dashboard", use_container_width=True)
                     st.markdown('</div>', unsafe_allow_html=True)
             with col2:
                 st.subheader("IPL Performance Dashboard (2008–2024)")
@@ -725,7 +725,7 @@ elif selection == "💼 Projects":
             with col3:
                 with st.container():
                     st.markdown('<div class="rounded-img">', unsafe_allow_html=True)
-                    st.image("./images/worldcup.png", caption="Cricket World Cup 2023", use_column_width=True)
+                    st.image("./images/worldcup.png", caption="Cricket World Cup 2023",use_container_width=True)
                     st.markdown('</div>', unsafe_allow_html=True)
             with col4:
                 st.subheader("Cricket World Cup 2023 Dashboard")
@@ -745,7 +745,7 @@ elif selection == "💼 Projects":
             with col5:
                 with st.container():
                     st.markdown('<div class="rounded-img">', unsafe_allow_html=True)
-                    st.image("./images/environment.png", caption="Environment Analysis", use_column_width=True)
+                    st.image("./images/Environment.png", caption="Environment Analysis", use_container_width=True)
                     st.markdown('</div>', unsafe_allow_html=True)
             with col6:
                 st.subheader("Global Environmental Trends (2000–2023)")
