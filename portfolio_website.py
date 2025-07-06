@@ -96,7 +96,7 @@ st.sidebar.markdown("</div>", unsafe_allow_html=True)
 
 
 
-st.markdown(f"<div style='padding: 40px;'>", unsafe_allow_html=True)
+
 
 
 # --- Custom CSS Styling ---
