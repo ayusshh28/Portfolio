@@ -172,7 +172,7 @@ if selection == "🏠 Home":
             }
 
             .home-heading {
-                font-size: 70px;
+                font-size: 90px;
                 font-weight: 900;
                 margin-bottom: 10px;
                 background: linear-gradient(to right, #FF914D, #FFDE59);
@@ -181,7 +181,7 @@ if selection == "🏠 Home":
             }
 
             .typing {
-                font-size: 22px;
+                font-size: 24px;
                 color: black;
                 margin-bottom: 20px;
                 border-right: 3px solid #FFDE59;
