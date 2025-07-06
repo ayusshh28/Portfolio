@@ -156,7 +156,7 @@ if selection == "🏠 Home":
             }
 
             .home-container {
-                padding: 50px 80px;
+                padding: 0px 80px;
                 animation: fadeIn 1.2s ease-in;
             }
 
