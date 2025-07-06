@@ -117,26 +117,6 @@ st.markdown("""
     margin-top: -40px !important; /* pulls all tab content upward */
     }
 
- 
-
-
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Segoe UI', sans-serif;
-        font-weight: 600;
-        line-height: 1.2;
-    }
-
-    h1 {
-        font-size: 36px !important;
-    }
-
-    h2 {
-        font-size: 28px !important;
-    }
-
-    h3 {
-        font-size: 22px !important;
-    }
             
     
     .stTabs [role="tab"] {
@@ -192,7 +172,7 @@ if selection == "🏠 Home":
             }
 
             .home-heading {
-                font-size: 90px;
+                font-size: 70px;
                 font-weight: 900;
                 margin-bottom: 10px;
                 background: linear-gradient(to right, #FF914D, #FFDE59);
