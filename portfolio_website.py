@@ -220,7 +220,7 @@ if selection == "🏠 Home":
 
             .home-description {
                 font-family: 'Poppins';
-                font-size: 20px;
+                font-size: 19px;
                 font-weight: 300;
                 line-height: 1.6;
                 color: black;
