@@ -113,7 +113,7 @@ st.markdown("""
 
     .main .block-container {
     max-width: 100% !important;
-    padding: 1rem 3rem 2rem 3rem; /* top, right, bottom, left */
+    padding: 1rem 3rem 3rem 3rem; /* top, right, bottom, left */
     margin-top: -40px !important; /* pulls all tab content upward */
 }
 
@@ -288,7 +288,7 @@ if selection == "🏠 Home":
 # --- About Section ---
 elif selection == "ℹ️ About Me":
     
-        st.subheader("About Me")
+        st.subheader("About Me") 
 
         st.markdown(
             """
@@ -339,7 +339,7 @@ elif selection == "ℹ️ About Me":
 
         # --------- Tab 2: Education ---------
         with tab1:
-            st.markdown("## 🎓 Education")
+            st.markdown("<h3 style='font-size: 25px; font-weight: 600;'>🎓 Education</h3>", unsafe_allow_html=True)
             st.markdown("<br>", unsafe_allow_html=True)
             education_table = """
             <table>
@@ -386,7 +386,7 @@ elif selection == "ℹ️ About Me":
 
                     # --------- Tab 1: Skills ---------
         with tab2:
-            st.markdown("## 💼 Skills & Tools")
+            st.markdown("<h3 style='font-size: 25px; font-weight: 600;'>💼 Skills & Tools</h3>", unsafe_allow_html=True)
 
             # Add CSS for wrapping in 4 rows
             st.markdown("""
@@ -431,7 +431,7 @@ elif selection == "ℹ️ About Me":
 
 
         with tab3:  # Adjust tab index as per your layout
-            st.markdown("## 🎓 Certifications")
+            st.markdown("<h3 style='font-size: 25px; font-weight: 600;'>🎓 Certifications</h3>", unsafe_allow_html=True)
 
             st.markdown("""
                 <p style='font-size:17px; line-height: 1.9;'>
