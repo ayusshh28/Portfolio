@@ -114,8 +114,8 @@ st.markdown("""
     .main .block-container {
     max-width: 100% !important;
     padding: 1rem 3rem 2rem 3rem; /* top, right, bottom, left */
-    margin-top: -20px; /* Moves it up slightly */
-    }
+    margin-top: -40px !important; /* pulls all tab content upward */
+}
 
  
     h1, h2, h3, h4, h5, h6 {
