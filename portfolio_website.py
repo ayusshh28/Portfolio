@@ -230,7 +230,7 @@ if selection == "🏠 Home":
             </div>
         """, unsafe_allow_html=True)
 
-        left, center, right = st.columns([0.4, 2, 1.6])
+        left, center, right = st.columns([0.2, 2, 1.8])
 
         # Put the button in the center column
         with center:
