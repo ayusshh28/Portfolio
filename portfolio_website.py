@@ -900,7 +900,7 @@ elif selection == "💼 Projects":
                 else:
                     st.warning("⚠️ Please select a movie from the dropdown.")
 
-            with service_tabs[3]:
+            with service_tabs[4]:
                 st.markdown("### 📝 Resume Builder")
                 st.write("Coming soon: Input your details and get a PDF resume generated.")
 
