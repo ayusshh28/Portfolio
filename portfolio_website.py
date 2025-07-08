@@ -793,9 +793,9 @@ elif selection == "💼 Projects":
         with service_tabs[3]:
             
             # --- Load saved models and data ---
-            tv = joblib.load("tfidf_vectorizer.pkl")
-            model = joblib.load("knn_model.pkl")
-            movies = joblib.load("movies_dataframe.pkl")
+            tv = joblib.load("movie_recomendation/tfidf_vectorizer.pkl")
+            model = joblib.load("movie_recomendation/knn_model.pkl")
+            movies = joblib.load("movie_recomendation/movies_dataframe.pkl")
             
             # --- Custom Styling ---
             st.markdown("""
