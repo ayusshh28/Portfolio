@@ -234,7 +234,7 @@ if selection == "🏠 Home":
 
         # Put the button in the center column
         with center:
-            with open("resume/CV.pdf", "rb") as file:
+            with open("resume/resume_ayush.pdf", "rb") as file:
                 st.download_button(
                     label="📄 Download CV",
                     data=file,
