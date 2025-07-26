@@ -162,7 +162,7 @@ if selection == "🏠 Home":
         """, unsafe_allow_html=True)
         left, center, right = st.columns([0.4, 2, 1.6])
         with center:
-            with open("resume/CV.pdf", "rb") as file:
+            with open("resume/resume_ayush.pdf", "rb") as file:
                 st.download_button(
                     label="📄 Download CV",
                     data=file,
