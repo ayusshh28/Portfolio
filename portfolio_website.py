@@ -1,4 +1,3 @@
-# --- Import necessary libraries ---
 import streamlit as st
 
 from streamlit_lottie import st_lottie
@@ -27,9 +26,10 @@ st.markdown("""
         padding: 30px 15px;
         border-radius: 0 20px 20px 0;
         box-shadow: 2px 0 12px rgba(0,0,0,0.1);
-        min-width: 310px !important;
-        width: 310px !important;
+        min-width: 320px !important;
+        width: 320px !important;
         }
+
 
         .sidebar-title {
             font-size: 28px;
@@ -106,19 +106,16 @@ st.markdown("""
 
     body, .main {
         background-color: #f9f9f9;
-
+        font-size: 16px !important;
         
     }
+
     .main .block-container {
-        max-width: 100% !important;
-        padding: 1rem 3rem 2rem 3rem; /* top, right, bottom, left */
-        margin-top: -20px; /* Moves it up slightly */
+    max-width: 100% !important;
+    padding: 1rem 3rem 4rem 2rem; /* top, right, bottom, left */
+    margin-top: -40px !important; /* pulls all tab content upward */
     }
 
-
-    h1, h2, h3, h4, h5, h6 {
-        color: #111111;
-    }
             
     
     .stTabs [role="tab"] {
@@ -150,7 +147,7 @@ st.markdown("""
 
 
 
-st.markdown(f"<div style='padding: 40px;'>", unsafe_allow_html=True)
+
 # --- Home Section ---
 
 
@@ -201,7 +198,8 @@ if selection == "🏠 Home":
          
 
             .home-description {
-                font-size: 18px;
+                font-family: 'Poppins';
+                font-size: 19px;
                 font-weight: 300;
                 line-height: 1.6;
                 color: black;
@@ -231,7 +229,7 @@ if selection == "🏠 Home":
             </div>
         """, unsafe_allow_html=True)
 
-        left, center, right = st.columns([0.4, 2, 1.6])
+        left, center, right = st.columns([0.3, 2, 1.7])
 
         # Put the button in the center column
         with center:
@@ -285,7 +283,7 @@ if selection == "🏠 Home":
 
 # --- About Section ---
 elif selection == "ℹ️ About Me":
-    
+
         st.subheader("About Me") 
 
         st.markdown(
@@ -424,7 +422,7 @@ elif selection == "ℹ️ About Me":
             skill_html = '<div class="skills-container">' + ''.join(
                 f"<div class='skill-tag'>{skill}</div>" for skill in skills
             ) + '</div>'
-            
+
             st.markdown(skill_html, unsafe_allow_html=True)
 
 
@@ -460,7 +458,7 @@ elif selection == "ℹ️ About Me":
 elif selection == "💼 Projects":
     st.subheader("💼 My Projects")
     st.markdown("<br>", unsafe_allow_html=True)
-    service_tabs = st.tabs(["🧠 LensX (NLP Suite)", "📊 Data Dashboards","🏦 Banking Automation System" ,"📄 Resume Builder"])
+    service_tabs = st.tabs(["🧠 LensX (NLP Suite)", "📊 Data Dashboards","🏦 Banking Automation System" ,"🎬 Movie Recommendation System","📄 Resume Builder"])
     with service_tabs[0]:
     # Load Models
 
@@ -591,11 +589,11 @@ elif selection == "💼 Projects":
 
 
 
-        
+
 
         st.markdown('<div class="lensx-tabs">', unsafe_allow_html=True)
 
-        
+
 
         spam_tab, lang_tab, review_tab, news_tab = st.tabs([
             "🚨 Spam Classifier",
@@ -618,8 +616,8 @@ elif selection == "💼 Projects":
                     st.error("🚫 Spam Alert! This message appears to be spam.")
                     st.markdown("### 🧨 Message flagged as SPAM!")
                     st.markdown("Be cautious while interacting with this message.")
-                
-                
+
+
                 else:
                     st.success("✅ This message is clean and not spam.")
                     st.balloons()
@@ -713,7 +711,7 @@ elif selection == "💼 Projects":
             with col1:
                 with st.container():
                     st.markdown('<div class="rounded-img">', unsafe_allow_html=True)
-                    st.image("images/IPL.png", caption="IPL Dashboard", use_column_width=True)
+                    st.image("./images/IPL.png", caption="IPL Dashboard", use_container_width=True)
                     st.markdown('</div>', unsafe_allow_html=True)
             with col2:
                 st.subheader("IPL Performance Dashboard (2008–2024)")
@@ -733,7 +731,7 @@ elif selection == "💼 Projects":
             with col3:
                 with st.container():
                     st.markdown('<div class="rounded-img">', unsafe_allow_html=True)
-                    st.image("images/worldcup.png", caption="Cricket World Cup 2023", use_column_width=True)
+                    st.image("./images/worldcup.png", caption="Cricket World Cup 2023",use_container_width=True)
                     st.markdown('</div>', unsafe_allow_html=True)
             with col4:
                 st.subheader("Cricket World Cup 2023 Dashboard")
@@ -753,7 +751,7 @@ elif selection == "💼 Projects":
             with col5:
                 with st.container():
                     st.markdown('<div class="rounded-img">', unsafe_allow_html=True)
-                    st.image("images/environment.png", caption="Environment Analysis", use_column_width=True)
+                    st.image("./images/Environment.png", caption="Environment Analysis", use_container_width=True)
                     st.markdown('</div>', unsafe_allow_html=True)
             with col6:
                 st.subheader("Global Environmental Trends (2000–2023)")
@@ -790,9 +788,121 @@ elif selection == "💼 Projects":
             """,unsafe_allow_html=True)
 
 
+
         with service_tabs[3]:
-            st.markdown("### 📝 Resume Builder")
-            st.write("Coming soon: Input your details and get a PDF resume generated.")
+
+            # --- Load saved models and data ---
+            tv = joblib.load("movie_recomendation/tfidf_vectorizer.pkl")
+            model = joblib.load("movie_recomendation/knn_model.pkl")
+            movies = joblib.load("movie_recomendation/movies_dataframe.pkl")
+
+            # --- Custom Styling ---
+            st.markdown("""
+                <style>
+                .stApp {
+                    background: linear-gradient(135deg, #8e9eab, #eef2f3);
+                    background-attachment: fixed;
+                    color: #1a1a1a;
+                }
+                .poster-container img {
+                    width: 220px !important;
+                    height: 320px !important;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    border: 4px solid #ccc;
+                    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+                    margin-bottom: 10px;
+                }
+                </style>
+            """, unsafe_allow_html=True)
+
+            # --- Title ---
+            st.title("🎬 Movie Recommendation System")
+            st.markdown("Get similar movies based on your favorite one!")
+
+            # --- Input from user ---
+            movie_list = ['-- Select your movie --'] + sorted(movies['name'].unique())
+
+            st.markdown("""
+                <style>
+                /* Change cursor to pointer when hovering over the selectbox */
+                div[data-baseweb="select"] > div {
+                    cursor: pointer;
+                }
+                </style>
+            """, unsafe_allow_html=True)
+
+            selected_movie = st.selectbox(
+                "Choose a movie",
+                options=sorted(movies['name'].unique()),
+                index=None,
+                placeholder="Select your movie"
+            )
+
+            # --- Recommendation Function ---
+
+            API_KEY = "85a6b972"  
+
+            def fetch_poster(movie_id):
+                url = f"http://www.omdbapi.com/?i={movie_id}&apikey={API_KEY}"
+                try:
+                    response = requests.get(url)
+                    data = response.json()
+                    poster = data.get("Poster", "")
+
+                    # Enhanced validation check
+                    if not poster or poster.strip() == "" or poster == "N/A" or poster.startswith("http") is False:
+                        return "https://via.placeholder.com/300x450?text=No+Image+Available"
+                    return poster
+
+                except:
+                    return "https://via.placeholder.com/300x450?text=Error"
+
+
+            num_recommendations = st.slider("How many movie recommendations do you want?", min_value=2, max_value=10, value=5)
+
+            def recommend(movie_name, n_recommendations):
+                movies_reset = movies.reset_index(drop=True)
+                vectors = tv.transform(movies_reset['tag'])
+
+                try:
+                    index = movies_reset[movies_reset['name'] == movie_name].index[0]
+                except IndexError:
+                    return [], []
+
+                distances, indices = model.kneighbors(vectors[index], n_neighbors=n_recommendations + 1)  # +1 to skip itself
+
+                recommended_movies = movies_reset.iloc[indices[0][1:]]  # skip self
+                names = recommended_movies['name'].values
+                movie_ids = recommended_movies['movie_id'].values
+
+                posters = [fetch_poster(movie_id) for movie_id in movie_ids]
+
+                return names, posters
+
+            # --- Show Recommendations ---
+            if st.button("Recommend 🎥"):
+                if selected_movie != '-- Select your movie --':
+                    recommended_movies, recommended_posters = recommend(selected_movie, num_recommendations)
+
+                    st.subheader("📽️ Recommended Movies:")
+                    cols = st.columns(min(5, num_recommendations))
+                    for i in range(len(recommended_movies)):
+                        with cols[i % len(cols)]:
+                            st.markdown('<div class="poster-container">', unsafe_allow_html=True)
+                            st.image(recommended_posters[i])
+                            if "No+Image" in recommended_posters[i] or "Error" in recommended_posters[i]:
+                                st.markdown('<p style="color: red; font-weight: bold;">Image not available</p>', unsafe_allow_html=True)
+                            st.markdown('</div>', unsafe_allow_html=True)
+                            st.markdown(f"**{recommended_movies[i]}**")
+
+                else:
+                    st.warning("⚠️ Please select a movie from the dropdown.")
+
+            with service_tabs[4]:
+                st.markdown("### 📝 Resume Builder")
+                st.write("Coming soon: Input your details and get a PDF resume generated.")
+
 # -----------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -852,10 +962,3 @@ elif selection == "📬 Contact":
                 st.success("✅ Thank you! Your message has been sent.")
 
         st.markdown("</div>", unsafe_allow_html=True)
-
-
-
-
-
-
-   
