@@ -132,7 +132,7 @@ html, body, [class*="css"] { font-family: 'Poppins',sans-serif;}
         # Download button in center
         left, center, right = st.columns([0.4,2,1.6])
         with center:
-            with open("resume/reume_ayush.pdf", "rb") as file:
+            with open("resume/resume_ayush.pdf", "rb") as file:
                 st.download_button(
                     label="📄 Download CV", data=file, file_name="resume_ayush.pdf", mime="application/pdf", key="download_cv_button"
                 )
